@@ -1,0 +1,13 @@
+#footer {
+    font-size: 17px;
+    color: #666;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Noto Sans KR", MalgunGothic, Tahoma, Geneva, sans-serif;
+    margin: 0;
+    border: 0;
+    line-height: 165%;
+    letter-spacing: normal;
+    position: relative;
+    background: #011031;
+    padding: 50px 0;
+}
