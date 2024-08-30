@@ -5,10 +5,8 @@ import logo2 from '../assets/logo2.png';
 import {Link, useNavigate} from "react-router-dom";
 import Modal from "../hook/Modal.jsx"; // 모달 컴포넌트 임포트
 
-const Header = ({ isLoggedIn, username, onLogout, onResetContent }) => {
+const Header = ({ isLoggedIn, username, onLogout}) => {
     const [modalVisible, setModalVisible] = useState(false);
-
-    const navigate = useNavigate();
 
     const handleLogoClick = () => {
         //onResetContent();  Content 상태 초기화
@@ -43,7 +41,7 @@ const Header = ({ isLoggedIn, username, onLogout, onResetContent }) => {
                         <span className="notification-icon">🔔</span> {/* 알림 아이콘 */}
                     </div>
                 ) : (
-                    <Link to="/login">로그인</Link>
+                    <Link to="/Login">로그인</Link>
                 )}
             </div>
 

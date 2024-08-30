@@ -4,7 +4,7 @@ import Header from "./layout/Header.jsx";
 import Content from "./layout/Content.jsx";
 import Footer from "./layout/Footer.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./layout/Login.jsx";
+import Login from "./pages/Login.jsx";
 import axios from "axios";
 
 function App() {
@@ -19,12 +19,10 @@ function App() {
         axios.get('/api/test')
             .then((res) => {
                 setHello(res.data);
-            })
+            })  .catch((error) => {
+            console.error("There was an error making the request!", error);
+        });
     }, []);
-
-
-
-
 
 
     const handleLogin = (username) => {
@@ -55,7 +53,7 @@ function App() {
                 <Route path="/"
                        element={<Content selectedProcess={selectedProcess} setSelectedProcess={setSelectedProcess}
                                          isLoggedIn={isLoggedIn}/>}/>
-                <Route path="/login" element={<Login onLogin={handleLogin}/>}/>
+                <Route path="/Login" element={<Login onLogin={handleLogin}/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>
